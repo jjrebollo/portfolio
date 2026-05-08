@@ -1,7 +1,7 @@
 ---
 import "../styles/global.css";
 import type { NavigationLink, SiteMeta } from "../types/portfolio";
-import { languages, localePaths, type Lang } from "../i18n/index";
+import { languages, languageFlags, localePaths, type Lang } from "../i18n/index";
 
 interface Props {
 	metadata: SiteMeta;
@@ -69,22 +69,35 @@ const currentLang = metadata.lang as Lang;
 								</li>
 							))
 						}
+						<li class="lang-switcher-item">
+							<button class="lang-trigger" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language">
+								<span class="lang-flag" aria-hidden="true">{languageFlags[currentLang]}</span>
+								<span class="lang-code">{currentLang.toUpperCase()}</span>
+								<svg class="lang-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+									<polyline points="2 4 6 8 10 4"/>
+								</svg>
+							</button>
+							<ul class="lang-dropdown" role="listbox" aria-label="Language">
+								{
+									(Object.keys(languages) as Lang[]).map((lang) => (
+										<li role="presentation">
+											<a
+												href={localePaths[lang]}
+												class="lang-option"
+												data-set-lang={lang}
+												hreflang={lang}
+												role="option"
+												aria-selected={lang === currentLang ? "true" : "false"}
+											>
+												<span class="lang-flag" aria-hidden="true">{languageFlags[lang]}</span>
+												{languages[lang]}
+											</a>
+										</li>
+									))
+								}
+							</ul>
+						</li>
 					</ul>
-					<div class="lang-switcher" role="navigation" aria-label="Language">
-						{
-							(Object.keys(languages) as Lang[]).map((lang) => (
-								<a
-									href={localePaths[lang]}
-									class="lang-pill"
-									data-set-lang={lang}
-									aria-current={lang === currentLang ? "true" : undefined}
-									hreflang={lang}
-								>
-									{lang.toUpperCase()}
-								</a>
-							))
-						}
-					</div>
 				</nav>
 			</header>
 			<main>
@@ -126,13 +139,41 @@ const currentLang = metadata.lang as Lang;
 				});
 			}
 
-			// Store language preference when user explicitly switches language.
-			document.querySelectorAll<HTMLElement>('[data-set-lang]').forEach((el) => {
-				el.addEventListener('click', () => {
+			// Store language preference when user explicitly switches language,
+			// and preserve the current section anchor.
+			document.querySelectorAll<HTMLAnchorElement>('[data-set-lang]').forEach((el) => {
+				el.addEventListener('click', (e) => {
+					e.preventDefault();
 					const lang = el.dataset.setLang;
 					if (lang) localStorage.setItem('lang-pref', lang);
+					window.location.assign(el.href + window.location.hash);
 				});
 			});
+
+			// Language dropdown toggle.
+			const langTrigger = document.querySelector<HTMLButtonElement>('.lang-trigger');
+			const langDropdown = document.querySelector<HTMLElement>('.lang-dropdown');
+
+			if (langTrigger && langDropdown) {
+				langTrigger.addEventListener('click', (e) => {
+					e.stopPropagation();
+					const isOpen = langDropdown.classList.toggle('is-open');
+					langTrigger.setAttribute('aria-expanded', String(isOpen));
+				});
+
+				document.addEventListener('click', () => {
+					langDropdown.classList.remove('is-open');
+					langTrigger.setAttribute('aria-expanded', 'false');
+				});
+
+				document.addEventListener('keydown', (e) => {
+					if (e.key === 'Escape') {
+						langDropdown.classList.remove('is-open');
+						langTrigger.setAttribute('aria-expanded', 'false');
+						langTrigger.focus();
+					}
+				});
+			}
 		</script>
 	</body>
 </html>

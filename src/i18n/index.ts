@@ -4,6 +4,12 @@ export const languages = {
 	pt: "Português",
 } as const;
 
+export const languageFlags: Record<keyof typeof languages, string> = {
+	en: "🇬🇧",
+	es: "🇪🇸",
+	pt: "🇵🇹",
+};
+
 export type Lang = keyof typeof languages;
 
 export const defaultLang: Lang = "en";
