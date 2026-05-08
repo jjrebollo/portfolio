@@ -6,7 +6,7 @@ export const siteMeta: SiteMeta = {
 	shortTitle: "Juan José Rebollo Barranco",
 	description:
 		"Líder de Engenharia com mais de 10 anos em desenvolvimento iOS e mais de 7 anos em liderança técnica. Especializado em arquitetura mobile, equipas distribuídas e entrega empresarial.",
-	cvHref: "/cv.pdf",
+	cvHref: "/Juan_Rebollo_CV.pdf",
 };
 
 export const navigationLinks: NavigationLink[] = [
@@ -102,7 +102,7 @@ export const siteContent: SiteContent = {
 		links: [
 			{ label: "LinkedIn", href: "https://www.linkedin.com/in/juan-jose-rebollo-barranco-80655929" },
 			{ label: "GitHub", href: "https://github.com/jjrebollo" },
-			{ label: "Descarregar CV", href: "/cv.pdf", download: true },
+			{ label: "Descarregar CV", href: "/Juan_Rebollo_CV.pdf", download: true },
 		],
 	},
 	labels: {
