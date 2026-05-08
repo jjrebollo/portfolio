@@ -3,7 +3,7 @@ import type { NavigationLink, SiteContent, SiteMeta } from "../types/portfolio";
 export const siteMeta: SiteMeta = {
 	lang: "es",
 	title: "Juan José Rebollo | Líder de Ingeniería",
-	shortTitle: "Juanjo Rebollo",
+	shortTitle: "Juan José Rebollo Barranco",
 	description:
 		"Líder de Ingeniería con más de 10 años en desarrollo iOS y más de 7 años en liderazgo técnico. Especializado en arquitectura mobile, equipos distribuidos y entrega empresarial.",
 	cvHref: "/cv.pdf",
@@ -96,9 +96,9 @@ export const siteContent: SiteContent = {
 		},
 	],
 	contact: {
-		email: "juarebbar@gmail.com",
+		email: "jj.rebollo.barranco@gmail.com",
 		availability:
-			"Abierto a roles de Head of Mobile, Solutions Architect, Technical Lead y Principal Engineer. Basado en Jerez de la Frontera, España — abierto a trabajo remoto e híbrido en Europa y Reino Unido.",
+			"Abierto a roles de Head of Mobile, Solutions Architect, Technical Lead y Principal Engineer. En España — abierto a trabajo remoto e híbrido en Europa y Reino Unido.",
 		links: [
 			{ label: "LinkedIn", href: "https://www.linkedin.com/in/juanjose-rebollo-barranco-80655929" },
 			{ label: "GitHub", href: "https://github.com/jjrebollo" },

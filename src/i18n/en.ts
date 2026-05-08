@@ -3,7 +3,7 @@ import type { NavigationLink, SiteContent, SiteMeta } from "../types/portfolio";
 export const siteMeta: SiteMeta = {
 	lang: "en",
 	title: "Juan José Rebollo | Engineering Leader",
-	shortTitle: "Juanjo Rebollo",
+	shortTitle: "Juan José Rebollo Barranco",
 	description:
 		"Engineering Leader with 10+ years in iOS development and 7+ years in technical leadership. Specialising in mobile architecture, distributed teams, and enterprise-grade delivery.",
 	cvHref: "/cv.pdf",
@@ -96,9 +96,9 @@ export const siteContent: SiteContent = {
 		},
 	],
 	contact: {
-		email: "juarebbar@gmail.com",
+		email: "jj.rebollo.barranco@gmail.com",
 		availability:
-			"Open to Head of Mobile, Solutions Architect, Technical Lead, and Principal Engineer roles. Based in Jerez de la Frontera, Spain — open to remote and hybrid arrangements in Europe and the UK.",
+			"Open to Head of Mobile, Solutions Architect, Technical Lead, and Principal Engineer roles. Based in Spain — open to remote and hybrid arrangements in Europe and the UK.",
 		links: [
 			{ label: "LinkedIn", href: "https://www.linkedin.com/in/juanjose-rebollo-barranco-80655929" },
 			{ label: "GitHub", href: "https://github.com/jjrebollo" },
