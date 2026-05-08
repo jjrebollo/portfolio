@@ -578,7 +578,17 @@ main {
 
 @media (max-width: 720px) {
 	.page-shell {
-		width: min(100vw - 1rem, 1120px);
+		width: 100%;
+		padding-inline: 0;
+		box-sizing: border-box;
+	}
+
+	.page-shell > main {
+		padding-inline: 1rem;
+	}
+
+	.site-footer {
+		padding-inline: 1rem;
 	}
 
 	.site-header {
