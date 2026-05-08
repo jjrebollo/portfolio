@@ -42,8 +42,8 @@ export const siteContent: SiteContent = {
 		{
 			name: "Entrega e DevOps",
 			summary:
-				"Responsabilidade end-to-end do pipeline de entrega, desde decisões de arquitetura até automação de releases e segurança empresarial.",
-			skills: ["GitHub Actions", "Jenkins", "GitLab", "Fastlane", "BDD / ATDD", "Scrum", "Kanban", "SAFe", "Modelo Spotify", "MDM / MAM / Intune"],
+				"Responsabilidade end-to-end dos workflows e pipelines de entrega, desde decisões de arquitetura até automação de releases e segurança empresarial.",
+			skills: ["GitHub Actions", "Jenkins", "GitLab", "Fastlane", "TDD / BDD / ATDD", "Scrum", "Kanban", "SAFe", "Modelo Spotify", "MDM / MAM / Intune"],
 		},
 		{
 			name: "Liderança e Estratégia",
@@ -59,12 +59,12 @@ export const siteContent: SiteContent = {
 				"Liderei a capacidade iOS na região SPAI (Espanha, Portugal, Itália) na Cognizant, mentorizando 12 engenheiros sénior enquanto liderava simultaneamente uma equipa de 5 engenheiros a construir uma nova app de raiz.",
 			impact:
 				"Desenhei uma arquitetura MVVM-C modular em SwiftUI e Combine que melhorou a velocidade de desenvolvimento através de padrões reutilizáveis e reduziu o tempo de onboarding via documentação estruturada e registos de decisões de arquitetura.",
-			stack: ["SwiftUI", "Combine", "MVVM-C", "Arquitetura Modular", "GitHub Actions", "API-first Design"],
+			stack: ["SwiftUI", "Combine", "MVVM-C", "Arquitetura Modular", "GitHub Actions", "API-first Design", "Azure DevOps"],
 		},
 		{
 			name: "HSBC — Arquiteto iOS, Mobile Centre of Excellence",
 			summary:
-				"Integrei o CoE de Mobile Empresarial da Wiley Edge como Especialista em iOS, responsável pela governança de arquitetura em múltiplas equipas num ambiente bancário altamente regulado.",
+				"Integrei o CoE de Mobile Empresarial da HSBC como Especialista em iOS (SME), responsável pela governança de arquitetura em múltiplas equipas num ambiente bancário altamente regulado.",
 			impact:
 				"Desenhei a arquitetura iOS empresarial de template adotada por todas as equipas, eliminando boilerplate e padronizando o desenvolvimento. Defini padrões de segurança mobile integrados com Intune, Zimperium e BlackBerry UEM.",
 			stack: ["MVVM-C", "Clean Architecture", "SOLID", "Intune", "BlackBerry UEM", "Zimperium", "UML"],
@@ -72,7 +72,7 @@ export const siteContent: SiteContent = {
 		{
 			name: "Jaguar Land Rover — Apps InControl Remote",
 			summary:
-				"Liderei o redesenho das apps InControl Remote da Land Rover e Jaguar de raiz como Líder Técnico iOS, gerindo uma equipa distribuída de 8–13 engenheiros no Reino Unido, Bielorrússia e Índia.",
+				"Liderei o redesenho das apps InControl Remote da Land Rover e Jaguar de raiz como Líder Técnico iOS, gerindo uma equipa distribuída de 8-13 engenheiros no Reino Unido, Bielorrússia e Índia.",
 			impact:
 				"Entreguei uma arquitetura escalável com suporte para releases em mais de 40 mercados. Construí pipelines CI/CD, introduzi práticas BDD e ATDD e assumi a entrega end-to-end incluindo integração de backend e app.",
 			stack: ["Swift", "Objective-C", "Jenkins", "GitLab", "Fastlane", "Firebase", "WebSockets", "SAFe", "BDD"],
@@ -82,7 +82,7 @@ export const siteContent: SiteContent = {
 		{
 			title: "Liderança Técnica",
 			evidence:
-				"Liderei equipas distribuídas de até 13 engenheiros em múltiplos fusos horários na JLR, e defini a estratégia do capítulo iOS para uma região inteira na Inditex — equilibrando o trabalho de arquitetura hands-on com o crescimento das pessoas e a responsabilidade de entrega.",
+				"Liderei equipas distribuídas de até 13 engenheiros em múltiplos fusos horários na JLR, e defini a estratégia do iOS Chapter para uma região inteira na Cognizant — equilibrando o trabalho de arquitetura hands-on com o crescimento das pessoas e a responsabilidade de entrega.",
 		},
 		{
 			title: "Alinhamento Interfuncional",
@@ -92,7 +92,7 @@ export const siteContent: SiteContent = {
 		{
 			title: "Mentoria e Crescimento da Equipa",
 			evidence:
-				"Construí processos de onboarding estruturados na JLR, defini planos de carreira e crescimento na Inditex, e estabeleci comunidades iOS internas com workshops técnicos, partilha de conhecimento e revisões de arquitetura.",
+				"Construí processos de onboarding estruturados na JLR, HSBC, Cognizant e Inditex, defini planos de carreira e crescimento na Cognizant, e estabeleci comunidades iOS internas com workshops técnicos, partilha de conhecimento e revisões de arquitetura.",
 		},
 	],
 	contact: {

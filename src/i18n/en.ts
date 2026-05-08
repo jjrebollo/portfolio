@@ -42,8 +42,8 @@ export const siteContent: SiteContent = {
 		{
 			name: "Delivery & DevOps",
 			summary:
-				"End-to-end ownership of the delivery pipeline, from architecture decisions through to release automation and enterprise security.",
-			skills: ["GitHub Actions", "Jenkins", "GitLab", "Fastlane", "BDD / ATDD", "Scrum", "Kanban", "SAFe", "Spotify Model", "MDM / MAM / Intune"],
+				"End-to-end ownership of the delivery workflows and pipelines, from architecture decisions through to release automation and enterprise security.",
+			skills: ["GitHub Actions", "Jenkins", "GitLab", "Fastlane", "TDD / BDD / ATDD", "Scrum", "Kanban", "SAFe", "Spotify Model", "MDM / MAM / Intune"],
 		},
 		{
 			name: "Leadership & Strategy",
@@ -59,12 +59,12 @@ export const siteContent: SiteContent = {
 				"Led iOS capability across the SPAI region (Spain, Portugal, Italy) at Cognizant, mentoring 12 senior engineers while simultaneously leading a 5-engineer team delivering a new app from scratch.",
 			impact:
 				"Designed a modular MVVM-C architecture in SwiftUI and Combine that improved development velocity through reusable patterns and reduced onboarding time via structured documentation and architecture decision records.",
-			stack: ["SwiftUI", "Combine", "MVVM-C", "Modular Architecture", "GitHub Actions", "API-first Design"],
+			stack: ["SwiftUI", "Combine", "MVVM-C", "Modular Architecture", "GitHub Actions", "API-first Design", "Azure DevOps"],
 		},
 		{
 			name: "HSBC — iOS Architect, Mobile Centre of Excellence",
 			summary:
-				"Joined the Enterprise Mobile CoE at Wiley Edge as the iOS Subject Matter Expert, responsible for architecture governance across multiple teams in a highly regulated banking environment.",
+				"Joined the Enterprise Mobile CoE at HSBC as the iOS Subject Matter Expert (SME), responsible for architecture governance across multiple teams in a highly regulated banking environment.",
 			impact:
 				"Designed the enterprise iOS template architecture adopted across teams, eliminating boilerplate and standardising development. Defined mobile security patterns integrated with Intune, Zimperium, and BlackBerry UEM.",
 			stack: ["MVVM-C", "Clean Architecture", "SOLID", "Intune", "BlackBerry UEM", "Zimperium", "UML"],
@@ -72,7 +72,7 @@ export const siteContent: SiteContent = {
 		{
 			name: "Jaguar Land Rover — InControl Remote Apps",
 			summary:
-				"Led the redevelopment of the Land Rover and Jaguar InControl Remote apps from scratch as iOS Technical Leader, managing a distributed team of 8–13 engineers across UK, Belarus, and India.",
+				"Led the redevelopment of the Land Rover and Jaguar InControl Remote apps from scratch as iOS Technical Leader, managing a distributed team of 8-13 engineers across the United Kingdom, Belarus, and India.",
 			impact:
 				"Delivered a scalable architecture supporting multi-country releases across 40+ markets. Built CI/CD pipelines, introduced BDD and ATDD practices, and owned end-to-end feature delivery including backend and app integration.",
 			stack: ["Swift", "Objective-C", "Jenkins", "GitLab", "Fastlane", "Firebase", "WebSockets", "SAFe", "BDD"],
@@ -82,7 +82,7 @@ export const siteContent: SiteContent = {
 		{
 			title: "Technical Leadership",
 			evidence:
-				"Led distributed teams of up to 13 engineers across multiple time zones at JLR, and defined the iOS chapter strategy for an entire region at Inditex — balancing hands-on architecture work with people growth and delivery accountability.",
+				"Led distributed teams of up to 13 engineers across multiple time zones at JLR, and defined the iOS chapter strategy for an entire region at Cognizant — balancing hands-on architecture work with people growth and delivery accountability.",
 		},
 		{
 			title: "Cross-functional Alignment",
@@ -92,7 +92,7 @@ export const siteContent: SiteContent = {
 		{
 			title: "Mentoring & Team Growth",
 			evidence:
-				"Built structured onboarding processes at JLR, defined career paths and growth plans at Inditex, and established internal iOS communities with technical workshops, knowledge sharing, and architecture reviews.",
+				"Built structured onboarding processes at JLR, HSBC, Cognizant, and Inditex, defined career paths and growth plans at Cognizant, and established internal iOS communities with technical workshops, knowledge sharing, and architecture reviews.",
 		},
 	],
 	contact: {

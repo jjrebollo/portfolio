@@ -19,7 +19,7 @@ export const navigationLinks: NavigationLink[] = [
 export const siteContent: SiteContent = {
 	hero: {
 		eyebrow: "Líder de Ingeniería",
-		title: "Haciendo crecer equipos de ingeniería, elevando el nivel de arquitectura y entregando a escala.",
+		title: "Haciendo crecer equipos de ingeniería, elevando el nivel de arquitectura y entregando escaladamente.",
 		summary:
 			"Líder de Ingeniería con más de 10 años en desarrollo iOS y más de 7 años en roles de liderazgo técnico y arquitectura. Historial probado liderando equipos distribuidos en España, Reino Unido e India — definiendo estrategia mobile, entregando aplicaciones empresariales en entornos altamente regulados y diseñando arquitecturas mantenibles, testeables y construidas para durar.",
 		primaryAction: { label: "Ver proyectos destacados", href: "#projects" },
@@ -36,14 +36,14 @@ export const siteContent: SiteContent = {
 		{
 			name: "Ingeniería iOS",
 			summary:
-				"Amplia experiencia en iOS nativo, desde integración de bajo nivel hasta UI declarativa moderna, aplicada consistentemente en producción a escala.",
+				"Amplia experiencia en iOS nativo, desde integración de bajo nivel hasta UI declarativa moderna, aplicada consistentemente en producción escalada.",
 			skills: ["Swift", "SwiftUI", "Combine", "watchOS", "MVVM-C", "VIPER", "Arquitectura Modular", "Arquitectura Limpia", "SOLID", "Diseño REST API"],
 		},
 		{
 			name: "Entrega y DevOps",
 			summary:
-				"Responsabilidad end-to-end del pipeline de entrega, desde decisiones de arquitectura hasta automatización de releases y seguridad empresarial.",
-			skills: ["GitHub Actions", "Jenkins", "GitLab", "Fastlane", "BDD / ATDD", "Scrum", "Kanban", "SAFe", "Modelo Spotify", "MDM / MAM / Intune"],
+				"Responsabilidad end-to-end de workflows y pipelines de entrega, desde decisiones de arquitectura hasta automatización de releases y seguridad empresarial.",
+			skills: ["GitHub Actions", "Jenkins", "GitLab", "Fastlane", "TDD / BDD / ATDD", "Scrum", "Kanban", "SAFe", "Modelo Spotify", "MDM / MAM / Intune"],
 		},
 		{
 			name: "Liderazgo y Estrategia",
@@ -59,12 +59,12 @@ export const siteContent: SiteContent = {
 				"Lideré la capacidad iOS en la región SPAI (España, Portugal, Italia) en Cognizant, mentorizando a 12 ingenieros senior mientras lideraba simultáneamente un equipo de 5 ingenieros construyendo una nueva app desde cero.",
 			impact:
 				"Diseñé una arquitectura MVVM-C modular en SwiftUI y Combine que mejoró la velocidad de desarrollo mediante patrones reutilizables y redujo el tiempo de onboarding a través de documentación estructurada y registros de decisiones de arquitectura.",
-			stack: ["SwiftUI", "Combine", "MVVM-C", "Arquitectura Modular", "GitHub Actions", "API-first Design"],
+			stack: ["SwiftUI", "Combine", "MVVM-C", "Arquitectura Modular", "GitHub Actions", "API-first Design", "Azure DevOps"],
 		},
 		{
 			name: "HSBC — Arquitecto iOS, Mobile Centre of Excellence",
 			summary:
-				"Me incorporé al CoE de Mobile Empresarial de Wiley Edge como Experto en Materia iOS, responsable de la gobernanza de arquitectura en múltiples equipos en un entorno bancario altamente regulado.",
+				"Me incorporé al CoE de Mobile Empresarial de HSBC como Experto en Materia iOS (SME), responsable de la gobernanza de arquitectura en múltiples equipos en un entorno bancario altamente regulado.",
 			impact:
 				"Diseñé la arquitectura iOS empresarial de plantilla adoptada por todos los equipos, eliminando boilerplate y estandarizando el desarrollo. Definí patrones de seguridad mobile integrados con Intune, Zimperium y BlackBerry UEM.",
 			stack: ["MVVM-C", "Clean Architecture", "SOLID", "Intune", "BlackBerry UEM", "Zimperium", "UML"],
@@ -72,7 +72,7 @@ export const siteContent: SiteContent = {
 		{
 			name: "Jaguar Land Rover — Apps InControl Remote",
 			summary:
-				"Lideré el rediseño de las apps InControl Remote de Land Rover y Jaguar desde cero como Líder Técnico iOS, gestionando un equipo distribuido de 8–13 ingenieros en UK, Bielorrusia e India.",
+				"Lideré el rediseño de las apps InControl Remote de Land Rover y Jaguar desde cero como Líder Técnico iOS, gestionando un equipo distribuido de 8-13 ingenieros en Reino Unido, Bielorrusia e India.",
 			impact:
 				"Entregué una arquitectura escalable con soporte para releases en más de 40 mercados. Construí pipelines CI/CD, introduje prácticas BDD y ATDD y lideré la entrega end-to-end incluyendo integración de backend y app.",
 			stack: ["Swift", "Objective-C", "Jenkins", "GitLab", "Fastlane", "Firebase", "WebSockets", "SAFe", "BDD"],
@@ -82,7 +82,7 @@ export const siteContent: SiteContent = {
 		{
 			title: "Liderazgo Técnico",
 			evidence:
-				"Lideré equipos distribuidos de hasta 13 ingenieros en múltiples zonas horarias en JLR, y definí la estrategia del capítulo iOS para toda una región en Inditex — equilibrando el trabajo de arquitectura hands-on con el crecimiento de personas y la responsabilidad de entrega.",
+				"Lideré equipos distribuidos de hasta 13 ingenieros en múltiples zonas horarias en JLR, y definí la estrategia del Chapter iOS para toda una región en Cognizant — equilibrando el trabajo de arquitectura hands-on con el crecimiento de personas y la responsabilidad de entrega.",
 		},
 		{
 			title: "Alineación Interfuncional",
@@ -92,7 +92,7 @@ export const siteContent: SiteContent = {
 		{
 			title: "Mentoría y Crecimiento de Equipo",
 			evidence:
-				"Construí procesos de onboarding estructurados en JLR, definí planes de carrera y crecimiento en Inditex, y establecí comunidades iOS internas con talleres técnicos, intercambio de conocimiento y revisiones de arquitectura.",
+				"Construí procesos de onboarding estructurados en JLR, HSBC, Cognizant e Inditex, definí planes de carrera y crecimiento en Cognizant, y establecí comunidades iOS internas con talleres técnicos, intercambio de conocimiento y revisiones de arquitectura.",
 		},
 	],
 	contact: {
@@ -112,7 +112,7 @@ export const siteContent: SiteContent = {
 			intro: "Desde ingeniería iOS nativa hasta pipelines de entrega y liderazgo de equipos — habilidades construidas y probadas en producción.",
 		},
 		projects: {
-			eyebrow: "Trabajo selecto",
+			eyebrow: "Trabajo seleccionado",
 			title: "Proyectos destacados",
 			intro: "Una selección de roles en los que fui responsable tanto de la arquitectura como del resultado.",
 		},
