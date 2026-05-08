@@ -89,8 +89,8 @@ export const siteContent: SiteContent = {
 		},
 	],
 	contact: {
-		email: "juarebbar@gmail.com",
-		availability: "Open to Head of Mobile, Solutions Architect, Technical Lead, and Principal Engineer roles. Based in Jerez de la Frontera, Spain — open to remote and hybrid arrangements in Europe and the UK.",
+		email: "jj.rebollo.barranco@gmail.com",
+		availability: "Open to Head of Mobile, Solutions Architect, Technical Lead, Engineer Manager, and Principal Engineer roles. Based in Spain — open to remote and hybrid arrangements in Europe and the UK.",
 		links: [
 			{ label: "LinkedIn", href: "https://www.linkedin.com/in/juanjose-rebollo-barranco-80655929" },
 			{ label: "GitHub", href: "https://github.com/jjrebollo" },

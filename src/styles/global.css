@@ -426,6 +426,18 @@ main {
 	flex-wrap: wrap;
 }
 
+.footer-source-link {
+	color: var(--muted);
+	text-decoration: underline;
+	text-underline-offset: 3px;
+	transition: color 180ms ease;
+}
+
+.footer-source-link:hover,
+.footer-source-link:focus-visible {
+	color: var(--accent);
+}
+
 @keyframes rise-in {
 	from {
 		opacity: 0;
