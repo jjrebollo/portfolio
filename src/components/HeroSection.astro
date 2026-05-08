@@ -4,9 +4,10 @@ import type { HeroContent } from "../types/portfolio";
 interface Props {
 	hero: HeroContent;
 	cvHref?: string;
+	downloadCvLabel?: string;
 }
 
-const { hero, cvHref } = Astro.props;
+const { hero, cvHref, downloadCvLabel = "Download CV" } = Astro.props;
 ---
 
 <section class="hero section-block" id="top">
@@ -24,7 +25,7 @@ const { hero, cvHref } = Astro.props;
 						<polyline points="7 10 12 15 17 10"/>
 						<line x1="12" y1="15" x2="12" y2="3"/>
 					</svg>
-					Download CV
+					{downloadCvLabel}
 				</a>
 			)}
 		</div>

@@ -1,4 +1,5 @@
 export interface SiteMeta {
+	lang: string;
 	title: string;
 	shortTitle: string;
 	description: string;
@@ -61,10 +62,28 @@ export interface ContactContent {
 	links: ContactLink[];
 }
 
+export interface SectionLabel {
+	eyebrow: string;
+	title: string;
+	intro?: string;
+}
+
+export interface SiteLabels {
+	skills: SectionLabel;
+	projects: SectionLabel;
+	strengths: SectionLabel;
+	contact: SectionLabel;
+	findMeOn: string;
+	downloadCv: string;
+	footerTagline: string;
+	footerSource: string;
+}
+
 export interface SiteContent {
 	hero: HeroContent;
 	skillGroups: SkillGroup[];
 	projectHighlights: ProjectHighlight[];
 	strengths: Strength[];
 	contact: ContactContent;
+	labels: SiteLabels;
 }

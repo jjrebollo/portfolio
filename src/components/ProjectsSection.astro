@@ -1,20 +1,17 @@
 ---
 import SectionHeading from "./SectionHeading.astro";
-import type { ProjectHighlight } from "../types/portfolio";
+import type { ProjectHighlight, SectionLabel } from "../types/portfolio";
 
 interface Props {
 	projects: ProjectHighlight[];
+	label: SectionLabel;
 }
 
-const { projects } = Astro.props;
+const { projects, label } = Astro.props;
 ---
 
 <section class="section-block" id="projects">
-	<SectionHeading
-		eyebrow="Selected work"
-		title="Featured work"
-		intro="A selection of roles where I owned both the architecture and the outcome."
-	/>
+	<SectionHeading {...label} />
 	<div class="card-grid">
 		{
 			projects.map((project) => (

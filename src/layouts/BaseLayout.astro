@@ -1,17 +1,21 @@
 ---
 import "../styles/global.css";
 import type { NavigationLink, SiteMeta } from "../types/portfolio";
+import { languages, localePaths, type Lang } from "../i18n/index";
 
 interface Props {
 	metadata: SiteMeta;
 	navigation: NavigationLink[];
+	footerTagline: string;
+	footerSource: string;
 }
 
-const { metadata, navigation } = Astro.props;
+const { metadata, navigation, footerTagline, footerSource } = Astro.props;
 const currentYear = new Date().getFullYear();
+const currentLang = metadata.lang as Lang;
 ---
 
-<html lang="en">
+<html lang={metadata.lang}>
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -20,11 +24,31 @@ const currentYear = new Date().getFullYear();
 		<meta name="description" content={metadata.description} />
 		<meta name="generator" content={Astro.generator} />
 		<title>{metadata.title}</title>
+		<link rel="alternate" hreflang="en" href="/" />
+		<link rel="alternate" hreflang="es" href="/es/" />
+		<link rel="alternate" hreflang="pt" href="/pt/" />
+		<link rel="alternate" hreflang="x-default" href="/" />
+		<script is:inline>
+			// Redirect first-time visitors to their browser language if supported.
+			(function () {
+				var PREF_KEY = 'lang-pref';
+				var lang = document.documentElement.lang;
+				if (lang !== 'en') return; // already on a non-default locale
+				var stored = localStorage.getItem(PREF_KEY);
+				if (stored === 'es') { window.location.replace('/es/'); return; }
+				if (stored === 'pt') { window.location.replace('/pt/'); return; }
+				if (!stored) {
+					var bl = (navigator.language || '').slice(0, 2).toLowerCase();
+					if (bl === 'es') { localStorage.setItem(PREF_KEY, 'es'); window.location.replace('/es/'); }
+					else if (bl === 'pt') { localStorage.setItem(PREF_KEY, 'pt'); window.location.replace('/pt/'); }
+				}
+			})();
+		</script>
 	</head>
 	<body>
 		<div class="page-shell">
 			<header class="site-header">
-				<a class="brand" href="/">{metadata.shortTitle}</a>
+				<a class="brand" href={localePaths[currentLang]}>{metadata.shortTitle}</a>
 				<button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav">
 					<svg class="icon-menu" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
 						<line x1="3" y1="6" x2="21" y2="6"/>
@@ -46,6 +70,21 @@ const currentYear = new Date().getFullYear();
 							))
 						}
 					</ul>
+					<div class="lang-switcher" role="navigation" aria-label="Language">
+						{
+							(Object.keys(languages) as Lang[]).map((lang) => (
+								<a
+									href={localePaths[lang]}
+									class="lang-pill"
+									data-set-lang={lang}
+									aria-current={lang === currentLang ? "true" : undefined}
+									hreflang={lang}
+								>
+									{lang.toUpperCase()}
+								</a>
+							))
+						}
+					</div>
 				</nav>
 			</header>
 			<main>
@@ -53,10 +92,10 @@ const currentYear = new Date().getFullYear();
 			</main>
 			<footer class="site-footer">
 				<p>{metadata.shortTitle}</p>
-				<p>Engineering Leader · iOS · Mobile Architecture</p>
+				<p>{footerTagline}</p>
 				<p>
 					<a href="https://github.com/jjrebollo/portfolio" target="_blank" rel="noopener noreferrer" class="footer-source-link">
-						Built with Astro · View source
+						{footerSource}
 					</a>
 				</p>
 				<p>{currentYear}</p>
@@ -82,10 +121,18 @@ const currentYear = new Date().getFullYear();
 					toggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
 				});
 
-				nav.querySelectorAll('a').forEach((link) => {
+				nav.querySelectorAll('a[href^="#"]').forEach((link) => {
 					link.addEventListener('click', closeMenu);
 				});
 			}
+
+			// Store language preference when user explicitly switches language.
+			document.querySelectorAll<HTMLElement>('[data-set-lang]').forEach((el) => {
+				el.addEventListener('click', () => {
+					const lang = el.dataset.setLang;
+					if (lang) localStorage.setItem('lang-pref', lang);
+				});
+			});
 		</script>
 	</body>
 </html>

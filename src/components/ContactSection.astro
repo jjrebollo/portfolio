@@ -1,26 +1,24 @@
 ---
 import SectionHeading from "./SectionHeading.astro";
-import type { ContactContent } from "../types/portfolio";
+import type { ContactContent, SectionLabel } from "../types/portfolio";
 
 interface Props {
 	contact: ContactContent;
+	label: SectionLabel;
+	findMeOn: string;
 }
 
-const { contact } = Astro.props;
+const { contact, label, findMeOn } = Astro.props;
 ---
 
 <section class="section-block" id="contact">
 	<div class="panel contact-panel">
-		<SectionHeading
-			eyebrow="Contact"
-			title="Let's talk"
-			intro="Whether you're scaling a mobile team, raising the architecture bar, or need someone to own delivery end-to-end — I'd be glad to connect."
-		/>
+		<SectionHeading {...label} />
 		<div class="contact-content">
 			<p class="contact-availability">{contact.availability}</p>
 			<a class="button button-primary" href={`mailto:${contact.email}`}>{contact.email}</a>
 			<div class="contact-profiles">
-				<p class="contact-profiles-label">Find me on</p>
+				<p class="contact-profiles-label">{findMeOn}</p>
 				<ul class="contact-links">
 					{contact.links.map((link) => (
 						<li>
