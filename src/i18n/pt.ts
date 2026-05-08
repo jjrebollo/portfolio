@@ -56,7 +56,7 @@ export const siteContent: SiteContent = {
 		{
 			name: "Inditex — iOS Chapter Lead e Arquiteto",
 			summary:
-				"Liderei a capacidade iOS na região SPAI (Espanha, Portugal, Itália) na Cognizant, mentorizando 12 engenheiros sénior enquanto liderava simultaneamente uma equipa de 5 engenheiros a construir uma nova app de raiz.",
+				"Liderei a capacidade iOS na região SPAI (Espanha, Portugal, Itália) na Cognizant, mentorizando 12 engenheiros sénior enquanto liderava simultaneamente uma equipa de 5 engenheiros na Inditex, a construir uma nova app de raiz.",
 			impact:
 				"Desenhei uma arquitetura MVVM-C modular em SwiftUI e Combine que melhorou a velocidade de desenvolvimento através de padrões reutilizáveis e reduziu o tempo de onboarding via documentação estruturada e registos de decisões de arquitetura.",
 			stack: ["SwiftUI", "Combine", "MVVM-C", "Arquitetura Modular", "GitHub Actions", "API-first Design", "Azure DevOps"],
