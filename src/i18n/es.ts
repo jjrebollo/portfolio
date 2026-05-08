@@ -100,7 +100,7 @@ export const siteContent: SiteContent = {
 		availability:
 			"Abierto a roles de Head of Mobile, Solutions Architect, Technical Lead y Principal Engineer. En España — abierto a trabajo remoto e híbrido en Europa y Reino Unido.",
 		links: [
-			{ label: "LinkedIn", href: "https://www.linkedin.com/in/juanjose-rebollo-barranco-80655929" },
+			{ label: "LinkedIn", href: "https://www.linkedin.com/in/juan-jose-rebollo-barranco-80655929" },
 			{ label: "GitHub", href: "https://github.com/jjrebollo" },
 			{ label: "Descargar CV", href: "/cv.pdf", download: true },
 		],
