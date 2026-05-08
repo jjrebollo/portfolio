@@ -7,7 +7,7 @@
 
 Personal portfolio site for **Juan José Rebollo Barranco** — Engineering Leader with 10+ years in iOS development and 7+ years in technical leadership. Built as a static, content-driven site with Astro 6 and TypeScript.
 
-🌐 **Live site:** [jjrebollo.github.io/portfolio](https://jjrebollo.github.io/portfolio) _(or your deployment URL)_
+🌐 **Live site:** [jrebollo.dev](https://jrebollo.dev)
 
 ---
 
@@ -18,7 +18,9 @@ Personal portfolio site for **Juan José Rebollo Barranco** — Engineering Lead
 | Framework | [Astro 6](https://astro.build) — static output, zero JS by default |
 | Language | TypeScript in strict mode (`astro/tsconfigs/strict`) |
 | Styling | Plain CSS with design tokens (`src/styles/global.css`) |
-| Content | Single typed data file (`src/data/portfolio.ts`) |
+| Content | Locale-specific data files (`src/i18n/en.ts`, `es.ts`, `pt.ts`) |
+| i18n | Astro built-in i18n with EN / ES / PT support |
+| Hosting | [Vercel](https://vercel.com) — auto-deploys on push to `main` |
 | Runtime | Node ≥ 22.12.0 |
 
 ## Project Structure
@@ -26,17 +28,26 @@ Personal portfolio site for **Juan José Rebollo Barranco** — Engineering Lead
 ```text
 /
 ├── public/
-│   ├── cv.pdf              # CV download
+│   ├── Juan_Rebollo_CV.pdf # CV download
 │   ├── favicon.svg         # JR monogram (black)
 │   └── favicon.ico         # Multi-resolution ICO
 ├── src/
 │   ├── components/         # Section components (Hero, Skills, Projects…)
 │   ├── data/
-│   │   └── portfolio.ts    # ← single source of truth for all content
+│   │   └── portfolio.ts    # Re-exports from i18n/en (backward compat)
+│   ├── i18n/
+│   │   ├── index.ts        # Language config, flags, locale paths
+│   │   ├── en.ts           # English content + labels
+│   │   ├── es.ts           # Spanish content + labels
+│   │   └── pt.ts           # Portuguese content + labels
 │   ├── layouts/
-│   │   └── BaseLayout.astro
+│   │   └── BaseLayout.astro # Header, nav, lang switcher, footer
 │   ├── pages/
-│   │   └── index.astro
+│   │   ├── index.astro     # English (/)
+│   │   ├── es/
+│   │   │   └── index.astro # Spanish (/es/)
+│   │   └── pt/
+│   │       └── index.astro # Portuguese (/pt/)
 │   ├── styles/
 │   │   └── global.css      # Design tokens + all styles
 │   └── types/
@@ -48,13 +59,26 @@ Personal portfolio site for **Juan José Rebollo Barranco** — Engineering Lead
 └── tsconfig.json
 ```
 
+## Internationalisation (i18n)
+
+The site supports **English**, **Spanish**, and **Portuguese**:
+
+- English is served at `/` (no prefix)
+- Spanish at `/es/`, Portuguese at `/pt/`
+- All text content lives in `src/i18n/{en,es,pt}.ts`
+- The language switcher in the nav shows the active language's flag and code; clicking another language navigates to the equivalent page and persists the choice in `localStorage`
+- First-time visitors are automatically redirected to their browser language if it is supported; English is the fallback
+- `hreflang` alternate links are included in `<head>` for SEO
+
+To update content, edit the relevant locale file — or all three to keep them in sync.
+
 ## Content
 
-All portfolio content lives in **`src/data/portfolio.ts`** — it is the only file that needs editing to update what appears on the site. It exports:
+All portfolio content is split by locale in **`src/i18n/`**. Each file exports:
 
-- `siteMeta` — page title, description, CV href
-- `navigationLinks` — header nav items
-- `siteContent` — hero, skill groups, project highlights, strengths, contact
+- `siteMeta` — page title, description, language code, CV href
+- `navigationLinks` — header nav items (translated)
+- `siteContent` — hero, skill groups, project highlights, strengths, contact, UI labels
 
 Types are defined in `src/types/portfolio.ts`.
 
@@ -68,6 +92,9 @@ npm install
 
 # Start dev server at http://localhost:4321
 npm run dev
+
+# Start dev server accessible on the local network (for mobile testing)
+npm run dev -- --host
 
 # Type-check the project
 npm run check
@@ -83,6 +110,10 @@ If using the system Node on macOS, prefix commands with:
 ```bash
 export PATH="/usr/local/opt/node@22/bin:$PATH"
 ```
+
+## Deployment
+
+The site is deployed to **Vercel** at [jrebollo.dev](https://jrebollo.dev). Every push to `main` triggers an automatic redeployment. The domain is managed via Namecheap with an A record pointing to Vercel's IP.
 
 ## Design Tokens
 
