@@ -1,0 +1,12 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Build Portfolio",
+			"type": "shell",
+			"command": "export PATH=\"/usr/local/opt/node@22/bin:$PATH\" && npm run build",
+			"isBackground": false,
+			"group": "build"
+		}
+	]
+}

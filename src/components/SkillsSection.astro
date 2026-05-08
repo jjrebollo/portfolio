@@ -1,0 +1,31 @@
+---
+import SectionHeading from "./SectionHeading.astro";
+import type { SkillGroup } from "../types/portfolio";
+
+interface Props {
+	skillGroups: SkillGroup[];
+}
+
+const { skillGroups } = Astro.props;
+---
+
+<section class="section-block" id="skills">
+	<SectionHeading
+		eyebrow="Capabilities"
+		title="What I bring to the table"
+		intro="From native iOS engineering to delivery pipelines and team leadership — skills built and tested in production."
+	/>
+	<div class="card-grid card-grid-three">
+		{
+			skillGroups.map((group) => (
+				<article class="panel feature-card">
+					<h3>{group.name}</h3>
+					<p>{group.summary}</p>
+					<ul class="pill-list">
+						{group.skills.map((skill) => <li>{skill}</li>)}
+					</ul>
+				</article>
+			))
+		}
+	</div>
+</section>

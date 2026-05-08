@@ -1,0 +1,17 @@
+---
+import ContactSection from "../components/ContactSection.astro";
+import HeroSection from "../components/HeroSection.astro";
+import ProjectsSection from "../components/ProjectsSection.astro";
+import SkillsSection from "../components/SkillsSection.astro";
+import StrengthsSection from "../components/StrengthsSection.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { navigationLinks, siteContent, siteMeta } from "../data/portfolio";
+---
+
+<BaseLayout metadata={siteMeta} navigation={navigationLinks}>
+	<HeroSection hero={siteContent.hero} cvHref={siteMeta.cvHref} />
+	<SkillsSection skillGroups={siteContent.skillGroups} />
+	<ProjectsSection projects={siteContent.projectHighlights} />
+	<StrengthsSection strengths={siteContent.strengths} />
+	<ContactSection contact={siteContent.contact} />
+</BaseLayout>

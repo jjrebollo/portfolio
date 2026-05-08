@@ -1,0 +1,28 @@
+---
+import SectionHeading from "./SectionHeading.astro";
+import type { Strength } from "../types/portfolio";
+
+interface Props {
+	strengths: Strength[];
+}
+
+const { strengths } = Astro.props;
+---
+
+<section class="section-block" id="strengths">
+	<SectionHeading
+		eyebrow="Soft skills"
+		title="How I work"
+		intro="The behaviours and practices that shape how I lead teams and make technical decisions."
+	/>
+	<div class="card-grid card-grid-three">
+		{
+			strengths.map((strength) => (
+				<article class="panel feature-card">
+					<h3>{strength.title}</h3>
+					<p>{strength.evidence}</p>
+				</article>
+			))
+		}
+	</div>
+</section>

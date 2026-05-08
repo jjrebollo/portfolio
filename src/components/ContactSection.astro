@@ -1,0 +1,39 @@
+---
+import SectionHeading from "./SectionHeading.astro";
+import type { ContactContent } from "../types/portfolio";
+
+interface Props {
+	contact: ContactContent;
+}
+
+const { contact } = Astro.props;
+---
+
+<section class="section-block" id="contact">
+	<div class="panel contact-panel">
+		<SectionHeading
+			eyebrow="Contact"
+			title="Let's talk"
+			intro="Whether you're scaling a mobile team, raising the architecture bar, or need someone to own delivery end-to-end — I'd be glad to connect."
+		/>
+		<div class="contact-content">
+			<p class="contact-availability">{contact.availability}</p>
+			<a class="button button-primary" href={`mailto:${contact.email}`}>{contact.email}</a>
+			<div class="contact-profiles">
+				<p class="contact-profiles-label">Find me on</p>
+				<ul class="contact-links">
+					{contact.links.map((link) => (
+						<li>
+							<a class="contact-link-button" href={link.href} {...(link.download ? { download: "Juan_Rebollo_CV.pdf" } : { target: "_blank", rel: "noopener noreferrer" })}>
+								{link.label}
+								<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+									<path d="M7 7h10v10"/><path d="M7 17 17 7"/>
+								</svg>
+							</a>
+						</li>
+					))}
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
