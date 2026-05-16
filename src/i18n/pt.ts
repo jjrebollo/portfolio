@@ -1,4 +1,4 @@
-import type { NavigationLink, SiteContent, SiteMeta } from "../types/portfolio";
+import type { NavigationLink, SiteContent, SiteMeta } from "~/types/portfolio";
 
 export const siteMeta: SiteMeta = {
 	lang: "pt",

@@ -1,17 +1,6 @@
 ---
-import ContactSection from "../../components/ContactSection.astro";
-import HeroSection from "../../components/HeroSection.astro";
-import ProjectsSection from "../../components/ProjectsSection.astro";
-import SkillsSection from "../../components/SkillsSection.astro";
-import StrengthsSection from "../../components/StrengthsSection.astro";
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import { navigationLinks, siteContent, siteMeta } from "../../i18n/pt";
+import HomeLayout from "~/layouts/HomeLayout.astro";
+import { navigationLinks, siteContent, siteMeta } from "~/i18n/pt";
 ---
 
-<BaseLayout metadata={siteMeta} navigation={navigationLinks} footerTagline={siteContent.labels.footerTagline} footerSource={siteContent.labels.footerSource}>
-	<HeroSection hero={siteContent.hero} cvHref={siteMeta.cvHref} downloadCvLabel={siteContent.labels.downloadCv} />
-	<SkillsSection skillGroups={siteContent.skillGroups} label={siteContent.labels.skills} />
-	<ProjectsSection projects={siteContent.projectHighlights} label={siteContent.labels.projects} />
-	<StrengthsSection strengths={siteContent.strengths} label={siteContent.labels.strengths} />
-	<ContactSection contact={siteContent.contact} label={siteContent.labels.contact} findMeOn={siteContent.labels.findMeOn} />
-</BaseLayout>
+<HomeLayout {siteMeta} {navigationLinks} {siteContent} />

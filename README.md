@@ -41,8 +41,9 @@ Personal portfolio site for **Juan José Rebollo Barranco** — Engineering Lead
 │   │   ├── es.ts           # Spanish content + labels
 │   │   └── pt.ts           # Portuguese content + labels
 │   ├── layouts/
-│   │   ├── BaseLayout.astro # Header, nav, lang switcher, footer
-│   │   └── WorkLayout.astro # Shared layout for the /work video pages
+│   │   ├── BaseLayout.astro  # Header, nav, lang switcher, footer
+│   │   ├── HomeLayout.astro  # Shared layout for all home pages
+│   │   └── WorkLayout.astro  # Shared layout for the /work video pages
 │   ├── pages/
 │   │   ├── index.astro     # English (/)
 │   │   ├── work.astro      # English videos (/work)
@@ -127,6 +128,18 @@ If using the system Node on macOS, prefix commands with:
 ```bash
 export PATH="/usr/local/opt/node@22/bin:$PATH"
 ```
+
+## Path Aliases
+
+All internal imports use the `~/` alias (mapped to `src/` in `tsconfig.json`) instead of relative paths:
+
+```ts
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import type { SiteMeta } from "~/types/portfolio";
+import { siteContent } from "~/i18n/en";
+```
+
+This avoids `../../` chains and makes imports refactor-safe regardless of file depth. The alias is resolved natively by Vite — no extra plugins are required.
 
 ## Deployment
 
