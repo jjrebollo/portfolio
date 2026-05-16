@@ -32,7 +32,7 @@ Personal portfolio site for **Juan José Rebollo Barranco** — Engineering Lead
 │   ├── favicon.svg         # JR monogram (black)
 │   └── favicon.ico         # Multi-resolution ICO
 ├── src/
-│   ├── components/         # Section components (Hero, Skills, Projects…)
+│   ├── components/         # Section components (Hero, Skills, Projects, VideoSection…)
 │   ├── data/
 │   │   └── portfolio.ts    # Re-exports from i18n/en (backward compat)
 │   ├── i18n/
@@ -41,13 +41,17 @@ Personal portfolio site for **Juan José Rebollo Barranco** — Engineering Lead
 │   │   ├── es.ts           # Spanish content + labels
 │   │   └── pt.ts           # Portuguese content + labels
 │   ├── layouts/
-│   │   └── BaseLayout.astro # Header, nav, lang switcher, footer
+│   │   ├── BaseLayout.astro # Header, nav, lang switcher, footer
+│   │   └── WorkLayout.astro # Shared layout for the /work video pages
 │   ├── pages/
 │   │   ├── index.astro     # English (/)
+│   │   ├── work.astro      # English videos (/work)
 │   │   ├── es/
-│   │   │   └── index.astro # Spanish (/es/)
+│   │   │   ├── index.astro # Spanish (/es/)
+│   │   │   └── work.astro  # Spanish videos (/es/work)
 │   │   └── pt/
-│   │       └── index.astro # Portuguese (/pt/)
+│   │       ├── index.astro # Portuguese (/pt/)
+│   │       └── work.astro  # Portuguese videos (/pt/work)
 │   ├── styles/
 │   │   └── global.css      # Design tokens + all styles
 │   └── types/
@@ -78,9 +82,22 @@ All portfolio content is split by locale in **`src/i18n/`**. Each file exports:
 
 - `siteMeta` — page title, description, language code, CV href
 - `navigationLinks` — header nav items (translated)
-- `siteContent` — hero, skill groups, project highlights, strengths, contact, UI labels
+- `siteContent` — hero, skill groups, project highlights, strengths, contact, video groups, UI labels
 
 Types are defined in `src/types/portfolio.ts`.
+
+## Videos page
+
+The `/work` route (and `/es/work`, `/pt/work`) is a dedicated page showcasing YouTube recordings of past projects:
+
+- **Inditex** — Logistics App
+- **JLR** — InControl Remote App v2
+- **JLR** — InControl Remote Watch App
+- **JLR** — InControl Remote App v1
+
+Projects are listed in reverse chronological order. Videos are embedded via `youtube-nocookie.com` with `loading="lazy"` for privacy and performance. YouTube Shorts are rendered at the correct 9:16 aspect ratio. The lang switcher correctly links to the equivalent locale work page when on `/work`.
+
+To add or reorder videos, edit the `videoGroups` array in `src/i18n/{en,es,pt}.ts`.
 
 ## Getting Started
 
