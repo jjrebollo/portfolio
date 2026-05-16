@@ -10,10 +10,11 @@ export const siteMeta: SiteMeta = {
 };
 
 export const navigationLinks: NavigationLink[] = [
-	{ label: "Habilidades", href: "#skills" },
-	{ label: "Proyectos", href: "#projects" },
-	{ label: "Fortalezas", href: "#strengths" },
-	{ label: "Contacto", href: "#contact" },
+	{ label: "Habilidades", href: "/es/#skills" },
+	{ label: "Proyectos", href: "/es/#projects" },
+	{ label: "Vídeos", href: "/es/work" },
+	{ label: "Fortalezas", href: "/es/#strengths" },
+	{ label: "Contacto", href: "/es/#contact" },
 ];
 
 export const siteContent: SiteContent = {
@@ -126,9 +127,53 @@ export const siteContent: SiteContent = {
 			title: "Hablemos",
 			intro: "Si estás escalando un equipo de mobile, elevando el nivel de arquitectura o necesitas a alguien que se responsabilice de la entrega end-to-end — estaré encantado de conectar.",
 		},
+		work: {
+			eyebrow: "Proyectos en acción",
+			title: "Proyectos en vídeo",
+			intro: "Grabaciones de aplicaciones que construí o lideré como Technical Leader — desde la suite InControl de JLR hasta la plataforma logística de Inditex.",
+		},
 		findMeOn: "Encuéntrame en",
 		downloadCv: "Descargar CV",
 		footerTagline: "Líder de Ingeniería · iOS · Arquitectura Mobile",
 		footerSource: "Desarrollado con Astro · Ver código",
 	},
+	videoGroups: [
+		{
+			project: "Inditex — App de Logística",
+			description: "Aplicación logística interna entregada para Inditex como iOS Technical Lead, construida desde cero con arquitectura MVVM-C en SwiftUI.",
+			anchor: "inditex",
+			videos: [
+				{ id: "KhEWEwIBTGQ", title: "Inditex Logistics App — Demo" },
+			],
+		},
+		{
+			project: "Jaguar Land Rover — InControl Remote App v2",
+			description: "La siguiente generación de la app InControl Remote, con arquitectura rediseñada, nuevas funcionalidades y soporte para nuevas plataformas de vehículos.",
+			anchor: "incontrol-v2",
+			videos: [
+				{ id: "mglk6Jbu23w", title: "InControl Remote App v2 — Overview" },
+				{ id: "iuvHfmDIp-E", title: "InControl Remote App v2 — Demo" },
+			],
+		},
+		{
+			project: "Jaguar Land Rover — InControl Remote Watch App",
+			description: "La app watchOS complementaria para la plataforma InControl Remote, desarrollada junto a la app iOS.",
+			anchor: "incontrol-watch",
+			videos: [
+				{ id: "fkoPquBFM9E", title: "InControl Remote Watch App", isShort: true },
+				{ id: "coHJIC9D1pQ", title: "InControl Remote Watch App — Demo" },
+			],
+		},
+		{
+			project: "Jaguar Land Rover — InControl Remote App v1",
+			description: "Vídeos de demostración de la primera redeveloper de las apps InControl Remote de Land Rover y Jaguar, lanzadas en más de 40 mercados.",
+			anchor: "incontrol-v1",
+			videos: [
+				{ id: "ZzN4pZpO-a8", title: "InControl Remote App v1 — Overview" },
+				{ id: "oy3ufw3dYj8", title: "InControl Remote App v1 — Demo" },
+				{ id: "4VhGbQQz2ks", title: "InControl Remote App v1 — Features" },
+				{ id: "FtU6g8TtvgM", title: "InControl Remote App v1 — Walkthrough" },
+			],
+		},
+	],
 };

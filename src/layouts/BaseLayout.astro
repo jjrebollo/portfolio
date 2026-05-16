@@ -8,11 +8,13 @@ interface Props {
 	navigation: NavigationLink[];
 	footerTagline: string;
 	footerSource: string;
+	pageLocalePaths?: Record<Lang, string>;
 }
 
-const { metadata, navigation, footerTagline, footerSource } = Astro.props;
+const { metadata, navigation, footerTagline, footerSource, pageLocalePaths } = Astro.props;
 const currentYear = new Date().getFullYear();
 const currentLang = metadata.lang as Lang;
+const effectivePaths: Record<Lang, string> = pageLocalePaths ?? localePaths;
 ---
 
 <html lang={metadata.lang}>
@@ -24,10 +26,10 @@ const currentLang = metadata.lang as Lang;
 		<meta name="description" content={metadata.description} />
 		<meta name="generator" content={Astro.generator} />
 		<title>{metadata.title}</title>
-		<link rel="alternate" hreflang="en" href="/" />
-		<link rel="alternate" hreflang="es" href="/es/" />
-		<link rel="alternate" hreflang="pt" href="/pt/" />
-		<link rel="alternate" hreflang="x-default" href="/" />
+		<link rel="alternate" hreflang="en" href={effectivePaths.en} />
+		<link rel="alternate" hreflang="es" href={effectivePaths.es} />
+		<link rel="alternate" hreflang="pt" href={effectivePaths.pt} />
+		<link rel="alternate" hreflang="x-default" href={effectivePaths.en} />
 		<script is:inline>
 			// Redirect first-time visitors to their browser language if supported.
 			(function () {
@@ -82,7 +84,7 @@ const currentLang = metadata.lang as Lang;
 									(Object.keys(languages) as Lang[]).map((lang) => (
 										<li role="presentation">
 											<a
-												href={localePaths[lang]}
+											href={effectivePaths[lang]}
 												class="lang-option"
 												data-set-lang={lang}
 												hreflang={lang}
@@ -134,7 +136,7 @@ const currentLang = metadata.lang as Lang;
 					toggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
 				});
 
-				nav.querySelectorAll('a[href^="#"]').forEach((link) => {
+				nav.querySelectorAll('a[href^="#"], a[href*="#"]').forEach((link) => {
 					link.addEventListener('click', closeMenu);
 				});
 			}

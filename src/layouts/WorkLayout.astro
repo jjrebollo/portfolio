@@ -1,0 +1,34 @@
+---
+import SectionHeading from "../components/SectionHeading.astro";
+import VideoSection from "../components/VideoSection.astro";
+import BaseLayout from "./BaseLayout.astro";
+import type { NavigationLink, SiteContent, SiteMeta } from "../types/portfolio";
+import type { Lang } from "../i18n/index";
+
+interface Props {
+	siteMeta: SiteMeta;
+	navigationLinks: NavigationLink[];
+	siteContent: SiteContent;
+}
+
+const { siteMeta, navigationLinks, siteContent } = Astro.props;
+
+const workLocalePaths: Record<Lang, string> = {
+	en: "/work",
+	es: "/es/work",
+	pt: "/pt/work",
+};
+---
+
+<BaseLayout
+	metadata={siteMeta}
+	navigation={navigationLinks}
+	footerTagline={siteContent.labels.footerTagline}
+	footerSource={siteContent.labels.footerSource}
+	pageLocalePaths={workLocalePaths}
+>
+	<section class="section-block" id="work">
+		<SectionHeading {...siteContent.labels.work} />
+		<VideoSection groups={siteContent.videoGroups} />
+	</section>
+</BaseLayout>

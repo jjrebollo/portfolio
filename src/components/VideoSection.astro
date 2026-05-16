@@ -1,0 +1,33 @@
+---
+import type { VideoGroup } from "../types/portfolio";
+
+interface Props {
+	groups: VideoGroup[];
+}
+
+const { groups } = Astro.props;
+---
+
+<div class="video-section">
+	{
+		groups.map((group) => (
+			<div class="video-group" id={group.anchor}>
+				<h2 class="video-group-title">{group.project}</h2>
+				<p class="video-group-desc">{group.description}</p>
+				<div class={`video-grid${group.videos.length === 1 ? " video-grid--single" : ""}`}>
+					{group.videos.map((video) => (
+						<div class={`video-wrapper${video.isShort ? " video-short" : ""}`}>
+							<iframe
+								src={`https://www.youtube-nocookie.com/embed/${video.id}`}
+								title={video.title}
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+								allowfullscreen
+								loading="lazy"
+							/>
+						</div>
+					))}
+				</div>
+			</div>
+		))
+	}
+</div>

@@ -68,11 +68,25 @@ export interface SectionLabel {
 	intro?: string;
 }
 
+export interface Video {
+	id: string;
+	title: string;
+	isShort?: boolean;
+}
+
+export interface VideoGroup {
+	project: string;
+	description: string;
+	anchor: string;
+	videos: Video[];
+}
+
 export interface SiteLabels {
 	skills: SectionLabel;
 	projects: SectionLabel;
 	strengths: SectionLabel;
 	contact: SectionLabel;
+	work: SectionLabel;
 	findMeOn: string;
 	downloadCv: string;
 	footerTagline: string;
@@ -85,5 +99,6 @@ export interface SiteContent {
 	projectHighlights: ProjectHighlight[];
 	strengths: Strength[];
 	contact: ContactContent;
+	videoGroups: VideoGroup[];
 	labels: SiteLabels;
 }
