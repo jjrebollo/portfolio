@@ -14,6 +14,7 @@ export const navigationLinks: NavigationLink[] = [
 	{ label: "Projects", href: "/#projects" },
 	{ label: "Videos", href: "/work" },
 	{ label: "Strengths", href: "/#strengths" },
+	{ label: "Recommendations", href: "/#recommendations" },
 	{ label: "Contact", href: "/#contact" },
 ];
 
@@ -96,6 +97,47 @@ export const siteContent: SiteContent = {
 				"Built structured onboarding processes at JLR, HSBC, Cognizant, and Inditex, defined career paths and growth plans at Cognizant, and established internal iOS communities with technical workshops, knowledge sharing, and architecture reviews.",
 		},
 	],
+	recommendations: {
+		source: "LinkedIn recommendations",
+		sourceUrl: "https://www.linkedin.com/in/juan-jose-rebollo-barranco-80655929/?locale=en",
+		items: [
+			{
+				author: "Elena Becerril",
+				headline: "Head of Digital Engineering Studio Iberia at Cognizant",
+				date: "April 28, 2026",
+				quote:
+					"Working with Juanjo over these years has been an absolute pleasure, he is one of those professionals who truly leaves a mark on everyone they work with. What sets Juanjo apart is the combination of deep technical expertise and outstanding soft skills. He doesn't just get the job done; he takes full ownership of everything he touches, anticipates challenges before they arise, and brings the kind of calm, reliable energy that makes teams better around him. If Juanjo is part of a project, success is not a goal, it's a guarantee. I couldn't recommend him more highly.",
+			},
+			{
+				author: "Jaihind Patil",
+				headline: "Test Lead at Endava",
+				date: "November 16, 2022",
+				quote:
+					"I had the pleasure of working with Juan at HSBC Company, collaborating on project teams. His expertise in IOS development and architect made things smooth in delivering. I was particularly impressed by Juan's ability to handle even the toughest issues effortlessly. That skill often takes years, but it seemed to come perfectly naturally to him. Juan would be an asset to any team.",
+			},
+			{
+				author: "Zbigniew Niewiadomski",
+				headline: "Lead Scrum Master | SimCorp",
+				date: "November 8, 2022",
+				quote:
+					"Very good iOS skills and architecture skills, along with experience in Android, allowed him to lead the team as an Architect and a mentor. Juan is very easy to get along with, resolves conflicts swiftly, while also being good at communicating, either giving praise or raising issues according to situation. I highly recommend Juan, it was a great pleasure to be able to work together.",
+			},
+			{
+				author: "Marcin Arciszewski",
+				headline: "Ex-Big 4 | Senior Android Engineer | Kotlin | Jetpack Compose | Android Architecture",
+				date: "January 10, 2022",
+				quote:
+					"I had a brief pleasure working with Juan. He is an enthusiastic and detail-oriented tech leader, with great people skills and strong technical expertise in iOS development. He is a true SOLID engineer, always advocating for clean architecture, testing, quality, and ready to go the extra mile to automate it. He is very approachable and a good team player. Definitely recommended working with him.",
+			},
+			{
+				author: "Keith Bauwise",
+				headline: "Software Engineering Manager",
+				date: "July 26, 2021",
+				quote:
+					"Juan Rebollo is a senior iOS developer, who holds the role of iOS Platform Technical Lead for the development of Jaguar and Land Rover InControl Remote mobile apps. His in-depth knowledge of our products and his comprehensive understanding of the iOS platform has made him an invaluable asset to the organisation. Juan has an extreme eye for detail and is very data-driven in his approach. He has excellent verbal and written communication skills and can communicate effectively at all levels, including senior management. Juan has a true can-do approach which is both inspiring and infectious. Any organisation would benefit from somebody of Juan's calibre. He always delivers, is totally customer focused, and very dependable.",
+			},
+		],
+	},
 	contact: {
 		email: "jj.rebollo.barranco@gmail.com",
 		availability:
@@ -122,6 +164,11 @@ export const siteContent: SiteContent = {
 			title: "How I work",
 			intro: "The behaviours and practices that shape how I lead teams and make technical decisions.",
 		},
+		recommendations: {
+			eyebrow: "LinkedIn",
+			title: "Recommendations",
+			intro: "Selected endorsements from colleagues and collaborators on LinkedIn.",
+		},
 		contact: {
 			eyebrow: "Contact",
 			title: "Let's talk",
@@ -132,6 +179,10 @@ export const siteContent: SiteContent = {
 			title: "Projects on video",
 			intro: "Recordings of apps I built or led as Technical Leader — from the JLR InControl suite to the Inditex logistics platform.",
 		},
+		recommendationsViewProfile: "View profile",
+		recommendationsMore: "More...",
+		recommendationsLess: "Less...",
+		recommendationsEmptyState: "LinkedIn blocks public access to recommendations, so this section is ready to display them once they are added to the portfolio data.",
 		findMeOn: "Find me on",
 		downloadCv: "Download CV",
 		footerTagline: "Engineering Leader · iOS · Mobile Architecture",

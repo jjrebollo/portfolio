@@ -2,6 +2,7 @@
 import ContactSection from "~/components/ContactSection.astro";
 import HeroSection from "~/components/HeroSection.astro";
 import ProjectsSection from "~/components/ProjectsSection.astro";
+import RecommendationsSection from "~/components/RecommendationsSection.astro";
 import SkillsSection from "~/components/SkillsSection.astro";
 import StrengthsSection from "~/components/StrengthsSection.astro";
 import BaseLayout from "~/layouts/BaseLayout.astro";
@@ -21,5 +22,13 @@ const { siteMeta, navigationLinks, siteContent } = Astro.props;
 	<SkillsSection skillGroups={siteContent.skillGroups} label={siteContent.labels.skills} />
 	<ProjectsSection projects={siteContent.projectHighlights} label={siteContent.labels.projects} />
 	<StrengthsSection strengths={siteContent.strengths} label={siteContent.labels.strengths} />
+	<RecommendationsSection
+		recommendations={siteContent.recommendations}
+		label={siteContent.labels.recommendations}
+		viewProfileLabel={siteContent.labels.recommendationsViewProfile}
+		moreLabel={siteContent.labels.recommendationsMore}
+		lessLabel={siteContent.labels.recommendationsLess}
+		emptyStateLabel={siteContent.labels.recommendationsEmptyState}
+	/>
 	<ContactSection contact={siteContent.contact} label={siteContent.labels.contact} findMeOn={siteContent.labels.findMeOn} />
 </BaseLayout>

@@ -50,6 +50,19 @@ export interface Strength {
 	evidence: string;
 }
 
+export interface Recommendation {
+	quote: string;
+	author: string;
+	headline: string;
+	date?: string;
+}
+
+export interface RecommendationsContent {
+	source: string;
+	sourceUrl: string;
+	items: Recommendation[];
+}
+
 export interface ContactLink {
 	label: string;
 	href: string;
@@ -85,8 +98,13 @@ export interface SiteLabels {
 	skills: SectionLabel;
 	projects: SectionLabel;
 	strengths: SectionLabel;
+	recommendations: SectionLabel;
 	contact: SectionLabel;
 	work: SectionLabel;
+	recommendationsViewProfile: string;
+	recommendationsMore: string;
+	recommendationsLess: string;
+	recommendationsEmptyState: string;
 	findMeOn: string;
 	downloadCv: string;
 	footerTagline: string;
@@ -98,6 +116,7 @@ export interface SiteContent {
 	skillGroups: SkillGroup[];
 	projectHighlights: ProjectHighlight[];
 	strengths: Strength[];
+	recommendations: RecommendationsContent;
 	contact: ContactContent;
 	videoGroups: VideoGroup[];
 	labels: SiteLabels;

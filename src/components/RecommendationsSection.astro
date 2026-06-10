@@ -1,0 +1,127 @@
+---
+import SectionHeading from "./SectionHeading.astro";
+import type { RecommendationsContent, SectionLabel } from "~/types/portfolio";
+
+interface Props {
+	recommendations: RecommendationsContent;
+	label: SectionLabel;
+	viewProfileLabel: string;
+	moreLabel: string;
+	lessLabel: string;
+	emptyStateLabel: string;
+}
+
+const { recommendations, label, viewProfileLabel, moreLabel, lessLabel, emptyStateLabel } = Astro.props;
+
+const quotePreviewLimit = 240;
+
+const splitQuote = (quote: string) => {
+	if (quote.length <= quotePreviewLimit) {
+		return { preview: quote, rest: "" };
+	}
+
+	const preview = quote.slice(0, quotePreviewLimit);
+	const cutPoint = preview.lastIndexOf(" ");
+	const previewText = (cutPoint > 0 ? preview.slice(0, cutPoint) : preview).trim();
+	const restText = quote.slice(previewText.length).trimStart();
+
+	return {
+		preview: previewText,
+		rest: restText,
+	};
+};
+---
+
+<section class="section-block" id="recommendations">
+	<SectionHeading {...label} />
+	<div class="panel recommendation-panel">
+		<div class="recommendation-source">
+			<p class="recommendation-source-label">{recommendations.source}</p>
+			<a class="text-link" href={recommendations.sourceUrl} target="_blank" rel="noopener noreferrer">{viewProfileLabel}</a>
+		</div>
+		{recommendations.items.length > 0 ? (
+			<div class="recommendation-grid">
+				{recommendations.items.map((recommendation, index) => {
+					const { preview, rest } = splitQuote(recommendation.quote);
+					const restId = `recommendation-rest-${index}`;
+					const ellipsisId = `recommendation-ellipsis-${index}`;
+					const isTruncated = rest.length > 0;
+
+					return (
+					<article class="panel feature-card recommendation-card">
+						<p class="recommendation-quote recommendation-quote-preview">
+							“{preview}
+							{isTruncated && (
+								<>
+									<span id={ellipsisId} class="recommendation-ellipsis">...</span>
+									<span id={restId} class="recommendation-rest" hidden>{` ${rest}`}</span>
+									<button type="button" class="recommendation-more" data-target={restId} data-ellipsis={ellipsisId} data-state="collapsed" aria-expanded="false" data-more-label={moreLabel} data-less-label={lessLabel}>{moreLabel}</button>
+								</>
+							)}
+							”
+						</p>
+						<div class="recommendation-meta">
+							<strong>{recommendation.author}</strong>
+							<span>{recommendation.headline}</span>
+							{recommendation.date && <span>{recommendation.date}</span>}
+						</div>
+					</article>
+					);
+				})}
+			</div>
+		) : (
+			<div class="recommendation-empty">
+				<p>{emptyStateLabel}</p>
+			</div>
+		)}
+	</div>
+</section>
+
+<script is:inline>
+	document.addEventListener("click", (event) => {
+		const target = event.target;
+		if (!(target instanceof Element)) {
+			return;
+		}
+
+		const button = target.closest(".recommendation-more");
+		if (!(button instanceof HTMLButtonElement)) {
+			return;
+		}
+
+		const restId = button.getAttribute("data-target");
+		if (!restId) {
+			return;
+		}
+
+		const rest = document.getElementById(restId);
+		if (!rest) {
+			return;
+		}
+
+		const ellipsisId = button.getAttribute("data-ellipsis");
+		const ellipsis = ellipsisId ? document.getElementById(ellipsisId) : null;
+		const isExpanded = button.getAttribute("data-state") === "expanded";
+		const moreLabel = button.getAttribute("data-more-label") ?? "More...";
+		const lessLabel = button.getAttribute("data-less-label") ?? "Less...";
+
+		if (isExpanded) {
+			rest.hidden = true;
+			if (ellipsis) {
+				ellipsis.hidden = false;
+			}
+			button.textContent = moreLabel;
+			button.setAttribute("data-state", "collapsed");
+			button.setAttribute("aria-expanded", "false");
+			return;
+		}
+
+		rest.hidden = false;
+		if (ellipsis) {
+			ellipsis.hidden = true;
+		}
+		button.textContent = lessLabel;
+		button.setAttribute("data-state", "expanded");
+		button.setAttribute("aria-expanded", "true");
+	});
+</script>

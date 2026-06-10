@@ -432,10 +432,86 @@ main {
 	background: rgba(255, 252, 246, 0.82);
 }
 
+.recommendation-panel {
+	display: grid;
+	gap: 1rem;
+	background: rgba(255, 252, 246, 0.82);
+	padding: 1.4rem;
+}
+
 .feature-card h3,
 .project-card h3 {
 	font-size: 1.4rem;
 	line-height: 1.1;
+}
+
+.recommendation-source {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto;
+	align-items: start;
+	gap: 0.75rem;
+}
+
+.recommendation-source-label {
+	font-weight: 700;
+	color: var(--text);
+	letter-spacing: -0.02em;
+}
+
+.recommendation-source .text-link {
+	justify-self: end;
+	width: auto;
+	padding-inline: 0.65rem;
+}
+
+.recommendation-grid {
+	column-count: 2;
+	column-gap: 1rem;
+}
+
+.recommendation-card {
+	break-inside: avoid;
+	margin-bottom: 1rem;
+}
+
+.recommendation-quote {
+	font-size: 1.06rem;
+	color: var(--text);
+	line-height: 1.7;
+}
+
+.recommendation-more {
+	margin-left: 0.35rem;
+	padding: 0;
+	border: 0;
+	background: none;
+	color: var(--accent-strong);
+	font-weight: 700;
+	cursor: pointer;
+	font: inherit;
+	line-height: inherit;
+}
+
+.recommendation-more:hover,
+.recommendation-more:focus-visible {
+	text-decoration: underline;
+	outline: none;
+}
+
+.recommendation-meta {
+	display: grid;
+	gap: 0.25rem;
+	color: var(--muted);
+	font-size: 0.94rem;
+}
+
+.recommendation-meta strong {
+	color: var(--text);
+	font-size: 1rem;
+}
+
+.recommendation-empty {
+	padding: 1rem 0 0.2rem;
 }
 
 .project-header {
@@ -469,7 +545,6 @@ main {
 .contact-content {
 	display: grid;
 	gap: 1rem;
-	max-width: 38rem;
 }
 
 .contact-profiles {
@@ -619,6 +694,10 @@ main {
 	.video-grid {
 		grid-template-columns: 1fr;
 	}
+
+	.recommendation-grid {
+		column-count: 1;
+	}
 }
 
 /* ── End video page ──────────────────────────────────────────────────── */
@@ -763,8 +842,6 @@ main {
 		max-width: 100%;
 	}
 
-	.nav-list a,
-	.text-link,
 	.button {
 		width: 100%;
 	}
