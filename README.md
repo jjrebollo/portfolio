@@ -83,9 +83,21 @@ All portfolio content is split by locale in **`src/i18n/`**. Each file exports:
 
 - `siteMeta` — page title, description, language code, CV href
 - `navigationLinks` — header nav items (translated)
-- `siteContent` — hero, skill groups, project highlights, strengths, contact, video groups, UI labels
+- `siteContent` — hero, skill groups, project highlights, strengths, recommendations, contact, video groups, UI labels
 
 Types are defined in `src/types/portfolio.ts`.
+
+## Recommendations section
+
+Home pages (`/`, `/es/`, `/pt/`) include a **LinkedIn Recommendations** section.
+
+- Data source is locale-specific in `src/i18n/{en,es,pt}.ts` under `siteContent.recommendations.items`
+- Recommendation cards use compact previews with inline expand/collapse (`More...` / `Less...`)
+- Expand/collapse labels and source link text are localized via `siteContent.labels`
+- Mobile layout uses a single column; wider screens use a masonry-style two-column flow
+- The source link points to the public LinkedIn profile URL configured in `sourceUrl`
+
+To add, remove, or reorder recommendations, edit the `recommendations.items` array in each locale file.
 
 ## Videos page
 
