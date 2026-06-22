@@ -1,0 +1,21 @@
+name: deploy-production
+
+# Deploys to Vercel production only when a GitHub Release is published.
+# Releases are cut by release-please when its release PR is merged into main,
+# so the deployed commit is exactly the released version.
+
+on:
+  release:
+    types: [published]
+
+# Avoid overlapping production deploys if releases are published in quick succession.
+concurrency:
+  group: production-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Vercel production deployment
+        run: curl -fsSL --retry 3 -X POST "${{ secrets.VERCEL_DEPLOY_HOOK_URL }}"
