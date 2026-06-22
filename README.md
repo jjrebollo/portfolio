@@ -169,6 +169,20 @@ Key CSS custom properties defined in `global.css`:
 | `--radius-lg` | `28px` | Cards |
 | `--radius-sm` | `999px` | Pills, buttons |
 
+## Versioning & releases
+
+This project follows [Semantic Versioning](https://semver.org/) (`MAJOR.MINOR.PATCH`)
+and uses [Conventional Commits](https://www.conventionalcommits.org/). Releases are
+automated with [release-please](https://github.com/googleapis/release-please):
+
+- Branching model: **GitHub Flow** — short-lived feature branches merged into `main` via PR.
+- Commit messages drive the version bump: `fix:` → patch, `feat:` → minor,
+  `feat!:` / `BREAKING CHANGE:` → major.
+- On every push to `main`, release-please maintains a release PR that updates
+  `package.json`, `CHANGELOG.md`, and—when merged—creates the git tag and GitHub Release.
+
+Common commit types: `feat`, `fix`, `docs`, `chore`, `refactor`, `test`, `perf`, `ci`, `build`.
+
 ## License
 
 [MIT](LICENSE)
